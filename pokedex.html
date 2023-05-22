@@ -18,47 +18,44 @@
 <body>
     <header> 
         
-        <a href="idex.html" class="logo">
+        <a href="inicio.html" class="logo">
             <img src="https://i.pinimg.com/originals/df/1a/fb/df1afb30f17ced92d06000ba0246b465.png" width="55px" height="55px">
             <h2 class="nombre-empresa">Pokemon</h2>
         </a>
         
         <nav class="redirigibles">
-            <a href="index.html", style="margin: 5px;">Inicio</a>
+            <a href="inicio.html", style="margin: 5px;">Inicio</a>
             <a href="pokedex.html", style="margin: 5px;">PokeDex</a>
 
         </nav>
 
     </header>
 
-    <div class="contenedor-total">
-        <main>
-            <div class="sub-contenedor-texto">
-                <div class="row">
-                    <div class="column">
-                        <div class="text-column">
-                            <h2>Llamada a la API REST de Pokemon</h2>
-                            <p>Usando la libreria Axios</p>
-                        </div>
+    <main class="pokedexAPI">
+        <div class="sub-contenedor-texto">
+            <div class="row">
+                <div class="column">
+                    <div class="text-column">
+                        <h2>Llamada a la API REST de Pokemon</h2>
                     </div>
-                    <div class="column">
-                        <div class="green-column">
-                            <div>
-                                Introduzca un numero:
-                                <input type="number" min="1" value="1" class="pokemon-input"></input>
-                            </div>
-                            <div>
-                                <span class="pokemon-name"></span>
-                            </div>
-                            <img class="pokemon-image"></img>
-                            <button class="pokemon-button">Cargar Pokémon</button>
+                </div>
+                <div class="column">
+                    <div class="green-column">
+                        <div>
+                            Introduzca un numero<br></>
+                            <input type="number" min="1" value="1" class="pokemon-input"></input>
                         </div>
+                        <div>
+                            <span class="pokemon-name"></span>
+                        </div>
+                        <img class="pokemon-image"></img>
+                        <button class="pokemon-button">Cargar Pokémon</button>
                     </div>
                 </div>
             </div>
-    </div>
+        </div>
     </main>
-
+    
     <script>
         const apiUrl = "https://pokeapi.co/api/v2/pokemon/";
         const input = document.querySelector(".pokemon-input");
