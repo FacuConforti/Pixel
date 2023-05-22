@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PokeAPI</title>
+    <link rel="stylesheet" href="./Estilos/styles.css">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Patua+One&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header> 
+        
+        <a href="inicio.html" class="logo">
+            <img src="https://i.pinimg.com/originals/df/1a/fb/df1afb30f17ced92d06000ba0246b465.png" width="55px" height="55px">
+            <h2 class="nombre-empresa">Pokemon</h2>
+        </a>
+        
+        <nav class="redirigibles">
+            <a href="inicio.html", style="margin: 5px;">Inicio</a>
+            <a href="pokedex.html", style="margin: 5px;">PokeDex</a>
+
+        </nav>
+
+    </header>
+
+    <div class="contenedor-total">
+        <main>
+            <div class="sub-contenedor-texto">
+                <div class="row">
+                    <div class="column">
+                        <div class="text-column">
+                            <h2>Llamada a la API REST de Pokemon</h2>
+                            <p>Usando la libreria Axios</p>
+                        </div>
+                    </div>
+                    <div class="column">
+                        <div class="green-column">
+                            <div>
+                                Introduzca un numero:
+                                <input type="number" min="1" value="1" class="pokemon-input"></input>
+                            </div>
+                            <div>
+                                <span class="pokemon-name"></span>
+                            </div>
+                            <img class="pokemon-image"></img>
+                            <button class="pokemon-button">Cargar Pokémon</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </div>
+    </main>
+
+    <script>
+        const apiUrl = "https://pokeapi.co/api/v2/pokemon/";
+        const input = document.querySelector(".pokemon-input");
+        const pokemonName = document.querySelector(".pokemon-name");
+        const pokemonImage = document.querySelector(".pokemon-image");
+
+        function getPokemonData() {
+            axios.get(apiUrl + input.value)
+                .then(function (response) {
+                    pokemonName.innerHTML = response.data.forms[0].name;
+                    pokemonImage.src = response.data.sprites.front_default;
+                })
+                .catch(function (error) {
+                    pokemonName.innerHTML = "(An error has occurred.)";
+                    pokemonImage.src = "";
+                });
+        }
+
+        const button = document.querySelector(".pokemon-button");
+        button.addEventListener("click", getPokemonData);
+
+    </script>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.17.0/axios.js"></script>
+    </div>
+
+    <footer>
+
+        <div class="logo">
+            <img src="https://i.pinimg.com/originals/df/1a/fb/df1afb30f17ced92d06000ba0246b465.png" width="55px" height="55px">
+        </div>
+
+    </footer>
+</body>
+</html>
