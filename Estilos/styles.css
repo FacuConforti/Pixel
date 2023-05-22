@@ -82,7 +82,38 @@ main{
     filter: contrast(120%);
 }
 
-/* BOTONES */
+/* PokeDex */
+
+.pokedexAPI{
+    background-color:bisque;
+    text-align: center;
+    width: 600px;
+    height: 400px;
+    margin: auto;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    padding: 20px;
+    box-shadow: 0 0 20;
+}
+
+.pokemon-image{
+    width: 300px;
+    height: 250;
+}
+
+.pokemon-button{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    width: 100%;
+    background: #3d4453;
+    border: none;
+    padding: 12px;
+    color: white;
+}
+
+.pokemon-button:active {
+    box-shadow: inset -4px 4px 0 #222;
+    font-size: 0.9rem;
+}
 
 /* HISTORIA */
 
